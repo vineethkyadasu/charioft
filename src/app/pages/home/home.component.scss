@@ -1,0 +1,151 @@
+// Import the mixin at the top
+@import 'src/styles/_hero';
+
+// Define color variables
+$charioft-primary: #0d6efd;
+$charioft-dark: #212529;
+$charioft-light-gray: #f8f9fa;
+$charioft-text-muted: #6c757d;
+$charioft-white: #ffffff;
+$charioft-border-color: #dee2e6;
+$charioft-soft-bg: #e8f0fe;
+
+//-----------------------------------------------------
+// General & Reusable Classes
+//-----------------------------------------------------
+.section-title { font-weight: 700; color: $charioft-dark; margin-bottom: 0.5rem; }
+
+.soft-bg-section {
+  background-color: $charioft-soft-bg;
+}
+
+//-----------------------------------------------------
+// Hero Section
+//-----------------------------------------------------
+.hero-section {
+  @include create-hero-section('/assets/images/home_hero.jpg');
+}
+
+//-----------------------------------------------------
+// Platform & Product Development Section
+//-----------------------------------------------------
+.platform-dev-section { background-color: $charioft-white; }
+.image-wrapper {
+    border-radius: 0.5rem; overflow: hidden; box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1); transition: all 0.3s ease;
+    img { width: 100%; display: block; transition: transform 0.4s ease-out; }
+    &:hover { box-shadow: 0 1rem 3rem rgba(32, 53, 79, 0.2); img { transform: scale(1.05); } }
+}
+.dev-feature-list {
+  list-style: none;
+  padding-left: 0;
+}
+.dev-feature {
+  display: flex;
+  align-items: flex-start;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+  &:last-child { margin-bottom: 0; }
+  .icon-wrapper {
+    flex-shrink: 0;
+    color: $charioft-primary;
+    background-color: $charioft-soft-bg;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-right: 1.5rem;
+  }
+  h5 { font-weight: 600; font-size: 1.1rem; }
+  p { font-size: 0.9rem; color: $charioft-text-muted; margin-bottom: 0; }
+  &:hover {
+    background-color: $charioft-white;
+    transform: scale(1.02);
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.08);
+  }
+}
+
+//-----------------------------------------------------
+// Infrastructure Services Section
+//-----------------------------------------------------
+.infra-section {
+  // This section now uses the .soft-bg-section class
+}
+.infra-card {
+  background-color: $charioft-white;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  width: 100%;
+  border: 1px solid $charioft-border-color;
+  transition: all 0.3s ease;
+  text-align: center;
+  i {
+    font-size: 2rem;
+    color: $charioft-primary;
+    margin-bottom: 1rem;
+    display: block;
+  }
+  h6 { font-weight: 600; margin-bottom: 0.5rem; }
+  p { font-size: 0.9rem; color: $charioft-text-muted; }
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.08);
+    border-color: $charioft-primary;
+  }
+}
+
+//-----------------------------------------------------
+// Charioft Services Section
+//-----------------------------------------------------
+.services-section {
+  background-color: $charioft-white;
+}
+.main-service-card {
+  background-color: $charioft-light-gray;
+  border: 1px solid transparent;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  width: 100%;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease;
+  
+  h5 { font-weight: 600; color: $charioft-dark; }
+  p { color: $charioft-text-muted; font-size: 0.9rem; }
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background-color: $charioft-white;
+    border-color: $charioft-primary;
+  }
+}
+
+//-----------------------------------------------------
+// Final CTA Section
+//-----------------------------------------------------
+.cta-section {
+  background-color: $charioft-soft-bg;
+  border-top: 1px solid $charioft-border-color;
+  h2 { color: $charioft-dark; }
+  p { color: $charioft-text-muted; }
+  
+  .hero-cta { // Reusing the hero cta style
+    padding: 0.8rem 2rem;
+    font-weight: 500;
+    background: linear-gradient(90deg, $charioft-primary, lighten($charioft-primary, 10%));
+    border: none;
+    transition: all 0.3s ease;
+    i { transition: transform 0.3s ease; }
+    &:hover {
+      box-shadow: 0 5px 15px rgba($charioft-primary, 0.4);
+      transform: translateY(-2px);
+      i { transform: translateX(5px); }
+    }
+  }
+}

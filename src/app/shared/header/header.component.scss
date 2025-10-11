@@ -1,0 +1,143 @@
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+
+// 1. Define Custom Colors
+$charioft-primary: #0d6efd;
+$charioft-light-blue: #e7f1ff;
+$charioft-white: #ffffff;
+$charioft-dark-text: #343a40;
+$charioft-border: #dee2e6;
+
+// 2. Define font stack with fallback
+$charioft-header-font: "Felix Titling", "Times New Roman", serif;
+
+// Custom Navbar Styling
+.custom-navbar {
+  background-color: $charioft-white !important;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid $charioft-border;
+  transition: box-shadow 0.3s ease;
+  
+  .navbar-brand { text-decoration: none; }
+  .charioft-logo { height: 40px; width: auto; border-radius: 50%; }
+  .brand-text { font-size: 1.5rem; font-weight: 600; color: $charioft-dark-text; margin-left: 0.75rem;font-family: $charioft-header-font;}
+
+  .nav-link {
+    color: $charioft-dark-text;
+    font-weight: 500;
+    padding: 0.5rem 1.2rem !important;
+    transition: color 0.3s ease;
+    position: relative;
+    text-decoration: none;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 1.2rem;
+      right: 1.2rem;
+      height: 2px;
+      background-color: $charioft-primary;
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.3s ease-out;
+    }
+    &:hover::after,
+    &.active-link::after {
+      transform: scaleX(1);
+    }
+    &:hover,
+    &.active-link {
+      color: $charioft-primary;
+    }
+  }
+
+  .navbar-toggler {
+    border: none;
+    &:focus { box-shadow: none; }
+  }
+  
+  .custom-btn-primary {
+    background-color: $charioft-primary;
+    border-color: $charioft-primary;
+    color: white;
+    padding: 0.6rem 1.25rem;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    &:hover {
+      background-color: darken($charioft-primary, 10%);
+      border-color: darken($charioft-primary, 10%);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba($charioft-primary, 0.25);
+    }
+  }
+
+  // Desktop Styles
+  @include media-breakpoint-up(lg) {
+    .navbar-nav {
+      .nav-item.dropdown:hover > .dropdown-menu {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .dropdown-menu {
+        display: block;
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(10px);
+        transition: all 0.2s ease-out;
+        margin-top: 0.5rem;
+        border-radius: $border-radius;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        border: none;
+        padding: 0.5rem 0;
+      }
+      .dropdown-item {
+        color: $charioft-dark-text;
+        padding: 0.75rem 1.5rem;
+        transition: all 0.2s ease;
+        &.active, &:hover {
+          background-color: $charioft-light-blue;
+          color: $charioft-primary;
+        }
+        &.active { font-weight: 600; }
+      }
+    }
+  }
+
+  // ** CORRECTED ** Mobile-specific adjustments
+  @include media-breakpoint-down(lg) {
+    .navbar-collapse {
+      // Add a subtle background to the expanded mobile menu for better readability
+      background-color: $charioft-white;
+      padding: 1rem;
+      margin-top: 1rem;
+      border-radius: $border-radius;
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    }
+    .navbar-nav {
+      align-items: flex-start;
+      .nav-item { margin-bottom: 0.5rem; width: 100%; }
+      .custom-btn-primary { width: 100%; text-align: center; }
+    }
+    // Let Bootstrap control the display of the dropdown menu
+    .dropdown-menu {
+      border: none !important;
+      box-shadow: none !important;
+      background-color: transparent !important;
+      padding-left: 1rem;
+      margin-top: 0.5rem !important;
+      
+      .dropdown-item {
+        padding: 0.5rem 1rem;
+        &.active, &:hover {
+          background-color: transparent;
+          color: $charioft-primary;
+        }
+      }
+    }
+  }
+}

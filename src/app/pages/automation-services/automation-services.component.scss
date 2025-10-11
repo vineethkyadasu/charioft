@@ -1,0 +1,166 @@
+// Import the mixin at the top
+@import 'src/styles/_hero';
+
+// Define color variables
+$charioft-primary: #0d6efd;
+$charioft-dark: #212529;
+$charioft-light-gray: #f8f9fa;
+$charioft-text-muted: #6c757d;
+$charioft-white: #ffffff;
+$charioft-border-color: #dee2e6;
+$charioft-soft-bg: #e8f0fe;
+
+// General Section Styling
+.section-title {
+  font-weight: 700;
+  color: $charioft-dark;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+// Soft Background for Alternating Sections
+.soft-bg-section {
+  background-color: $charioft-soft-bg;
+  border-radius: 0.5rem;
+}
+
+// Hero Section
+.hero-section {
+  @include create-hero-section(
+    '/assets/images/automation-services.png',
+    'center center / cover no-repeat'
+  );
+}
+
+// Main Content Section Styling
+.automation-content-section {
+  .feature-item {
+    margin-top: 1.5rem;
+  }
+}
+
+.image-wrapper {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  img {
+    width: 100%;
+    display: block;
+    transition: transform 0.4s ease-out;
+  }
+}
+
+.container-tight {
+  padding: 0 1.5rem;
+}
+
+.feature-checklist {
+  padding-left: 0;
+  margin-top: 1rem;
+  li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+    color: $charioft-text-muted;
+    i {
+      color: $charioft-primary;
+      margin-right: 0.75rem;
+      margin-top: 0.25rem;
+    }
+  }
+}
+
+// Feature Accordion Styling
+.feature-accordion {
+  .feature-item {
+    padding: 1.5rem;
+    border: 1px solid $charioft-border-color;
+    border-radius: 0.5rem;
+    background-color: $charioft-white;
+    margin-bottom: 1rem;
+    &:last-child { margin-bottom: 0; }
+    h5 {
+      display: flex;
+      align-items: center;
+      font-weight: 600;
+      font-size: 1.1rem;
+      i {
+        color: $charioft-primary;
+        margin-right: 1rem;
+        font-size: 1.5rem;
+      }
+    }
+    p {
+      margin-left: 2.5rem;
+      margin-bottom: 0;
+      font-size: 0.9rem;
+      color: $charioft-text-muted;
+    }
+  }
+}
+
+// Methodology Card Styling
+.method-card {
+  width: 100%;
+  padding: 1.5rem;
+  background-color: $charioft-soft-bg;
+  border: 1px solid $charioft-border-color;
+  border-radius: 0.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  i {
+    font-size: 2rem;
+    color: $charioft-primary;
+    margin-bottom: 0.75rem;
+  }
+  h6 {
+    font-weight: 600;
+    margin-bottom: 0;
+  }
+  &:hover {
+    transform: translateY(-5px);
+    background-color: $charioft-white;
+    box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.08);
+  }
+}
+
+// Sticky Form Wrapper & Styling
+.sticky-form-wrapper {
+  position: sticky;
+  top: 120px;
+}
+.form-wrapper {
+  background-color: $charioft-white;
+  padding: 2.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid $charioft-border-color;
+  box-shadow: 0 0.5rem 2rem rgba(0,0,0,0.07);
+  
+  .form-control {
+    background-color: $charioft-light-gray;
+    border-color: $charioft-border-color;
+    padding: 0.85rem 1rem;
+    &:focus {
+      background-color: $charioft-white;
+      border-color: $charioft-primary;
+      box-shadow: 0 0 0 0.25rem rgba($charioft-primary, 0.25);
+    }
+  }
+  .btn-primary {
+    padding: 0.85rem 1rem;
+    font-weight: 500;
+  }
+}
+
+// Final CTA Section
+.cta-section {
+  background-color: $charioft-primary;
+  .btn-light {
+    font-weight: 500;
+    padding: 0.8rem 2.5rem;
+    color: $charioft-primary;
+    &:hover {
+      background-color: #eef5ff;
+    }
+  }
+}

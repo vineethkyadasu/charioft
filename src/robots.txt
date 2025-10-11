@@ -1,0 +1,5 @@
+# src/robots.txt
+User-agent: *
+Allow: /
+
+Sitemap: https://www.charioft.com/sitemap.xml

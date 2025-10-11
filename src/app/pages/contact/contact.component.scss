@@ -1,0 +1,123 @@
+// Import hero mixin
+@import 'src/styles/_hero';
+
+// Color variables
+$charioft-primary: #0d6efd;
+$charioft-dark: #212529;
+$charioft-light-gray: #f8f9fa;
+$charioft-text-muted: #6c757d;
+$charioft-white: #ffffff;
+$charioft-border-color: #dee2e6;
+$charioft-soft-bg: #e8f0fe;
+
+// General Section Styling
+.section-title { font-weight: 700; margin-bottom: 0.5rem; }
+.soft-bg-section { background-color: $charioft-soft-bg; }
+
+// Hero Section
+.hero-section {
+  @include create-hero-section('/assets/images/contactus.png', 'center center / cover no-repeat');
+}
+
+// Contact Form & Info Section
+.contact-form-section {
+  .section-title, .lead { color: $charioft-dark; }
+  .lead { color: $charioft-text-muted; }
+  .contact-info-card {
+    display: flex; align-items: center; padding: 1.5rem; background-color: $charioft-white;
+    border: 1px solid $charioft-border-color; border-radius: 0.5rem; text-decoration: none; transition: all 0.3s ease;
+    .icon-wrapper {
+      flex-shrink: 0; color: $charioft-primary; background-color: $charioft-soft-bg;
+      height: 50px; width: 50px; border-radius: 50%; display: inline-flex;
+      align-items: center; justify-content: center; font-size: 1.5rem; margin-right: 1.5rem;
+    }
+    .info-content {
+      flex-grow: 1;
+      h6 { font-weight: 600; margin-bottom: 0.25rem; color: $charioft-dark; }
+      span { color: $charioft-primary; font-weight: 500; }
+    }
+    &:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); border-color: $charioft-primary; }
+  }
+
+  .form-wrapper { background-color: $charioft-white; padding: 2.5rem; border-radius: 0.5rem; box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.1); }
+  .form-label { font-weight: 500; margin-bottom: 0.5rem; }
+  .form-control, .form-select {
+    padding: 0.85rem 1rem; background-color: $charioft-light-gray; border-color: $charioft-border-color;
+    &:focus { background-color: $charioft-white; border-color: $charioft-primary; box-shadow: 0 0 0 0.25rem rgba($charioft-primary, 0.25); }
+  }
+  .btn-primary { padding: 0.85rem 1rem; font-weight: 500; }
+
+  // ** NEW CUSTOM MULTISELECT STYLES **
+  .multiselect-wrapper {
+    position: relative;
+    .multiselect-display {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.85rem 1rem;
+      background-color: $charioft-light-gray;
+      border: 1px solid $charioft-border-color;
+      border-radius: 0.375rem;
+      cursor: pointer;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      i { transition: transform 0.3s ease; }
+      &.open {
+        border-color: $charioft-primary;
+        box-shadow: 0 0 0 0.25rem rgba($charioft-primary, 0.25);
+        i { transform: rotate(180deg); }
+      }
+    }
+    .multiselect-options {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: $charioft-white;
+      border: 1px solid $charioft-border-color;
+      border-top: none;
+      border-radius: 0 0 0.375rem 0.375rem;
+      max-height: 200px;
+      overflow-y: auto;
+      z-index: 10;
+      box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+      .option-item {
+        display: flex;
+        align-items: center;
+        padding: 0.75rem 1rem;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+        input[type="checkbox"] { display: none; }
+        .custom-checkbox {
+          height: 18px; width: 18px;
+          border: 2px solid $charioft-border-color;
+          border-radius: 0.25rem;
+          margin-right: 0.75rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: background-color 0.2s ease, border-color 0.2s ease;
+          &::after {
+            content: '\F26E'; // Bootstrap check icon
+            font-family: 'bootstrap-icons';
+            color: $charioft-white;
+            font-size: 14px;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+          }
+        }
+        &:hover { background-color: $charioft-soft-bg; }
+        input:checked + .custom-checkbox {
+          background-color: $charioft-primary;
+          border-color: $charioft-primary;
+          &::after { opacity: 1; }
+        }
+      }
+    }
+  }
+}
+
+// Google Maps Section
+.map-section {
+  .map-wrapper { width: 100%; height: 450px; border-radius: 0.5rem; overflow: hidden; border: 1px solid $charioft-border-color; box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1); }
+  iframe { width: 100%; height: 100%; }
+}

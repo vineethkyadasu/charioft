@@ -1,0 +1,39 @@
+/* You might already have other global styles here */
+
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px; /* Adjust as needed */
+    right: 40px; /* Adjust as needed */
+    background-color: #25D366; /* WhatsApp green */
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 28px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 1000; /* Ensure it's above other content */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.whatsapp-float:hover {
+    text-decoration: none;
+    color: #FFF;
+    background-color: #1DA851; /* Slightly darker green on hover */
+    transform: scale(1.05); /* Subtle zoom effect */
+    box-shadow: 3px 3px 5px #888;
+}
+
+/* Optional: Make it smaller on mobile devices */
+@media (max-width: 768px) {
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 24px;
+    }
+}

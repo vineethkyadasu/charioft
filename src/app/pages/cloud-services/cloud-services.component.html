@@ -1,0 +1,95 @@
+<main class="exadata-page">
+
+<section class="hero-section text-white">
+  <div class="container hero-content">
+    <div class="row">
+      <div class="col-lg-8 col-md-10">
+        <h1 class="display-4">Exadata Database Support & Services</h1>
+        <p class="lead">
+          Cloud computing “in a box” is the driving force behind Oracle’s Exadata Database Machine, enabling you to run Oracle in the cloud, on-premises, or as a hybrid solution.
+        </p>
+        <a routerLink="/contact" class="btn btn-primary btn-lg mt-3">Speak with an Expert</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container py-5">
+  <div class="row g-5">
+
+    <div class="col-lg-8">
+
+      <section class="exadata-content-section" appScrollAnimation>
+        <h2 class="section-title">Run Oracle in the Cloud, On-Premises, or Both</h2>
+        <p class="text-muted">Combining storage and networking in a convenient hardware rack, Exadata is the ideal solution for Oracle-based enterprises. At Charioft, our engineers have been working with the Exadata Database Machine since it was first introduced in 2008, and we continue to support new customers with each subsequent version release.</p>
+
+        <div class="feature-item">
+          <h5>Our Exadata engineering team can help with:</h5>
+          <ul class="feature-checklist list-unstyled">
+            <li><i class="bi bi-check-circle-fill"></i> Sizing and planning an Exadata implementation for your organization.</li>
+            <li><i class="bi bi-check-circle-fill"></i> Implementing and integrating Exadata into your existing environment.</li>
+            <li><i class="bi bi-check-circle-fill"></i> Migrating databases to Exadata.</li>
+            <li><i class="bi bi-check-circle-fill"></i> 24x7x365 Exadata monitoring and troubleshooting.</li>
+            <li><i class="bi bi-check-circle-fill"></i> Exadata performance tuning.</li>
+            <li><i class="bi bi-check-circle-fill"></i> Integrating Grid Control with Exadata.</li>
+            <li><i class="bi bi-check-circle-fill"></i> Working with Exadata support at Oracle.</li>
+            <li><i class="bi bi-check-circle-fill"></i> Upgrading Exadata to the newest versions each year.</li>
+          </ul>
+        </div>
+        
+        <p class="text-muted mt-4">Our engineers don’t work with just one Exadata system; they work with a wide variety of implementations, giving them amazing breadth and depth of experience to help your organization.</p>
+        <p class="text-muted">Charioft is a full-service Oracle support organization, and we can deploy our expert Exadata team on-site or off-site depending on what you need. To find out more about our Exadata services and solutions, fill out the form to the right or speak to an expert today.</p>
+
+      </section>
+
+    </div>
+
+    <div class="col-lg-4">
+      <div class="sticky-form-wrapper">
+        <div class="form-wrapper" appScrollAnimation>
+          <h4 class="mb-3 text-center">Contact Us</h4>
+          <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+            <div class="row g-3">
+              <div class="col-12"><input type="text" class="form-control" placeholder="Name *" id="name" name="name" ngModel required></div>
+              <div class="col-12"><input type="email" class="form-control" placeholder="Email *" id="email" name="email" ngModel required></div>
+              <div class="col-12"><input type="tel" class="form-control" placeholder="Phone" id="phone" name="phone" ngModel></div>
+              <div class="col-12"><textarea class="form-control" rows="4" placeholder="Message *" id="message" name="message" ngModel required></textarea></div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary w-100" [disabled]="disableSend || !contactForm.valid">
+                    {{ disableSend ? 'Sending...' : 'Get in Touch' }}
+                  </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="cta-section py-5 text-center text-white">
+  <div class="container">
+    <h2 class="display-5">Ready to Optimize Your Exadata Environment?</h2>
+    <p class="lead mb-4">Let our experts help you design a data strategy that drives real business value.</p>
+    <a routerLink="/contact" class="btn btn-light btn-lg">Schedule a Strategy Session</a>
+  </div>
+</section>
+
+  <div class="toast-container position-fixed top-0 end-0 p-3">
+    <div id="successToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header bg-success text-white">
+        <strong class="me-auto">Success</strong>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">Your message has been sent successfully!</div>
+    </div>
+    <div id="errorToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header bg-danger text-white">
+        <strong class="me-auto">Error</strong>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">Something went wrong. Please try again.</div>
+    </div>
+  </div>
+
+</main>

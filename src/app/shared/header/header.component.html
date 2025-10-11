@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light custom-navbar sticky-top">
+  <div class="container-fluid container-xl">
+    <a class="navbar-brand d-flex align-items-center" routerLink="/" (click)="closeNavbar()">
+      <!-- <img src="/assets/images/logo.jpeg" alt="Charioft Logo" class="charioft-logo"> -->
+      <span class="brand-text">Charioft</span>
+    </a>
+    
+    <button #navbarToggler class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div #navbarNavDropdown class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+      <ul class="navbar-nav align-items-lg-center">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" (click)="closeNavbar()">Home</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" routerLink="/exadata" routerLinkActive="active-link" (click)="closeNavbar()">Exadata</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" routerLink="/database" routerLinkActive="active-link" (click)="closeNavbar()">Database</a>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" [class.active-link]="isServicesActive">
+            Services
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+            <li><a class="dropdown-item" routerLink="/services/hacloud" routerLinkActive="active" (click)="closeNavbar()">HA and Cloud Backup</a></li>
+            <li><a class="dropdown-item" routerLink="/services/managed" routerLinkActive="active" (click)="closeNavbar()">Managed Services</a></li>
+            <li><a class="dropdown-item" routerLink="/services/automation" routerLinkActive="active" (click)="closeNavbar()">Automation Services</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about" routerLinkActive="active-link" (click)="closeNavbar()">About Us</a>
+        </li>
+
+        <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+          <a class="btn btn-primary custom-btn-primary" routerLink="/contact" (click)="closeNavbar()">Try Charioft</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

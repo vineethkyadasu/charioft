@@ -1,0 +1,109 @@
+// Define Custom Colors
+$charioft-primary-blue: #0d6efd;
+$charioft-footer-bg: #f8f9fa;
+$charioft-footer-text: #5f6368;
+$charioft-footer-heading: #202124;
+$charioft-footer-border: #dee2e6;
+
+.site-footer {
+  background-color: $charioft-footer-bg;
+  color: $charioft-footer-text;
+  padding: 4rem 0 2rem 0;
+  font-size: 0.9rem;
+
+  .footer-heading {
+    color: $charioft-footer-heading;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  // ** UPDATED ** Contact Info Styling
+  .contact-info {
+    a {
+      text-decoration: none;
+      color: $charioft-footer-text;
+      transition: color 0.3s ease; // Added transition for the hover effect
+      &:hover {
+        color: $charioft-primary-blue;
+      }
+    }
+    i {
+      font-size: 1.1rem; // Slightly smaller for better balance
+      margin-top: 0.25rem; // Adjust vertical alignment
+    }
+  }
+
+  // Footer Navigation Links
+  .footer-links {
+    li {
+      margin-bottom: 0.75rem;
+    }
+    a {
+      color: $charioft-footer-text;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      position: relative;
+      padding-bottom: 4px;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background-color: $charioft-primary-blue;
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: transform 0.3s ease-out;
+      }
+      
+      &:hover {
+        color: $charioft-primary-blue;
+        &::after {
+          transform: scaleX(1);
+        }
+      }
+    }
+  }
+
+  // Copyright Section
+  .copyright-section {
+    border-top: 1px solid $charioft-footer-border;
+    padding-top: 2rem;
+    margin-top: 2rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+
+    .separator {
+      color: $charioft-footer-border;
+    }
+
+    .designer-link {
+      color: $charioft-footer-text;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $charioft-primary-blue;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.loation{
+  &:hover {
+        color: $charioft-primary-blue;
+        &::after {
+          transform: scaleX(1);
+        }
+      }
+}

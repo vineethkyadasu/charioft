@@ -1,0 +1,121 @@
+<main class="managed-services-page">
+
+<section class="hero-section text-white">
+  <div class="container hero-content">
+    <div class="row">
+      <div class="col-lg-7 col-md-10">
+        <h1 class="display-4">Proactive Managed Services</h1>
+        <p class="lead">
+          Focus on your core business while we ensure the peak performance, security, and reliability of your IT infrastructure. Our 24/7 managed services provide peace of mind and operational excellence.
+        </p>
+        <a routerLink="/contact" class="btn btn-primary btn-lg mt-3">Explore Our Plans</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container py-5">
+  <div class="row g-5">
+
+    <div class="col-lg-8">
+      <section class="value-prop-section" appScrollAnimation>
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <h2 class="section-title">Unlock Peak Performance and Efficiency</h2>
+            <p class="text-muted">Let our certified experts manage the complexities of your cloud and IT infrastructure. We go beyond simple support, providing strategic guidance and continuous optimization to reduce your costs, mitigate risks, and accelerate your business goals.</p>
+            <ul class="list-unstyled value-list">
+              <li><i class="bi bi-check2-circle"></i> 24/7 Proactive Monitoring & Support</li>
+              <li><i class="bi bi-check2-circle"></i> Enhanced Security & Compliance</li>
+              <li><i class="bi bi-check2-circle"></i> Cost Optimization</li>
+              <li><i class="bi bi-check2-circle"></i> Certified Expert Engineers</li>
+            </ul>
+          </div>
+          <div class="col-lg-6">
+            <div class="image-wrapper">
+              <img src="/assets/images/managed-services-1.jpg" alt="Proactive Managed Services">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="catalog-section py-5 mt-5 soft-bg-section" appScrollAnimation>
+        <div class="container-tight">
+          <div class="text-center mb-5">
+            <h2 class="section-title">Our Comprehensive Managed Services Catalog</h2>
+            <p class="lead text-muted">A complete suite of services to ensure your infrastructure is always optimized.</p>
+          </div>
+          <div class="row g-4">
+            <div class="col-md-6 d-flex"><div class="catalog-card"><h5>Cost Management</h5><p>Continuous monitoring and optimization of your cloud spend to maximize ROI.</p></div></div>
+            <div class="col-md-6 d-flex"><div class="catalog-card"><h5>Infrastructure Monitoring</h5><p>24/7 monitoring of your resources to proactively identify and resolve issues.</p></div></div>
+            <div class="col-md-6 d-flex"><div class="catalog-card"><h5>Patch Management</h5><p>Automated patch deployment to keep your systems secure and up-to-date.</p></div></div>
+            <div class="col-md-6 d-flex"><div class="catalog-card"><h5>Account Administration</h5><p>Managing user access, permissions, and accounts across your environment.</p></div></div>
+            <div class="col-md-6 d-flex"><div class="catalog-card"><h5>Backup & Recovery</h5><p>Implementing robust backup strategies to ensure business continuity.</p></div></div>
+            <div class="col-md-6 d-flex"><div class="catalog-card"><h5>Incident Management</h5><p>Rapid response and resolution for any incidents to minimize downtime.</p></div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="models-section mt-5" appScrollAnimation>
+        <div class="text-center mb-5">
+          <h2 class="section-title">Flexible Engagement Models</h2>
+          <p class="lead text-muted">Choose the support structure that best fits your global or local business needs.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 d-flex"><div class="model-card"><h5>Local Service Desk</h5><p>Dedicated on-site or regional support for your teams.</p></div></div>
+          <div class="col-md-6 d-flex"><div class="model-card"><h5>Centralized</h5><p>A single, unified point of contact for all your support needs.</p></div></div>
+          <div class="col-md-6 d-flex"><div class="model-card"><h5>Virtual / Remote</h5><p>Global support from our expert remote engineering teams.</p></div></div>
+          <div class="col-md-6 d-flex"><div class="model-card"><h5>Follow the Sun</h5><p>24/7 continuous support coverage across all time zones.</p></div></div>
+        </div>
+      </section>
+    </div>
+
+    <div class="col-lg-4">
+      <div class="sticky-form-wrapper">
+        <div class="form-wrapper" appScrollAnimation>
+          <h4 class="mb-3 text-center">Contact an Expert</h4>
+          <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+            <div class="row g-3">
+              <div class="col-12"><input type="text" class="form-control" placeholder="Name *" id="name" name="name" ngModel required></div>
+              <div class="col-12"><input type="email" class="form-control" placeholder="Email *" id="email" name="email" ngModel required></div>
+              <div class="col-12"><input type="tel" class="form-control" placeholder="Phone" id="phone" name="phone" ngModel></div>
+              <div class="col-12"><textarea class="form-control" rows="4" placeholder="Message *" id="message" name="message" ngModel required></textarea></div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary w-100" [disabled]="disableSend || !contactForm.valid">
+                  {{ disableSend ? 'Sending...' : 'Get in Touch' }}
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<section class="cta-section py-5 text-center text-white">
+  <div class="container">
+    <h2 class="display-5">Ready for Worry-Free IT?</h2>
+    <p class="lead mb-4">Let us handle your IT infrastructure so you can focus on what you do best. Contact us for a custom quote.</p>
+    <a routerLink="/contact" class="btn btn-light btn-lg">Get a Custom Quote</a>
+  </div>
+</section>
+
+  <div class="toast-container position-fixed top-0 end-0 p-3">
+    <div id="successToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header bg-success text-white">
+        <strong class="me-auto">Success</strong>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">Your message has been sent successfully!</div>
+    </div>
+    <div id="errorToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header bg-danger text-white">
+        <strong class="me-auto">Error</strong>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">Something went wrong. Please try again.</div>
+    </div>
+  </div>
+
+</main>

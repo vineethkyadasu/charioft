@@ -1,0 +1,164 @@
+// Import the mixin at the top
+@import 'src/styles/_hero';
+
+// Define color variables
+$charioft-primary: #0d6efd;
+$charioft-dark: #212529;
+$charioft-light-gray: #f8f9fa;
+$charioft-text-muted: #6c757d;
+$charioft-white: #ffffff;
+$charioft-border-color: #dee2e6;
+$charioft-soft-bg: #e8f0fe;
+
+// General Section Styling
+.section-title {
+  font-weight: 700;
+  color: $charioft-dark;
+  margin-bottom: 0.5rem;
+}
+
+// Soft Background for Alternating Sections
+.soft-bg-section {
+  background-color: $charioft-soft-bg;
+  border-radius: 0.5rem;
+}
+
+// Hero Section
+.hero-section {
+  @include create-hero-section(
+    '/assets/images/managed-services.png',
+    'center center / cover no-repeat'
+  );
+}
+
+// Used to add padding inside the soft-bg-sections
+.container-tight {
+  padding: 0 1.5rem;
+}
+
+// Value Proposition Section
+.value-prop-section {
+  .image-wrapper {
+    text-align: center;
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      max-height: 350px;
+      object-fit: contain;
+    }
+  }
+}
+.value-list {
+  li {
+    font-size: 1.1rem;
+    color: $charioft-dark;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    i {
+      color: $charioft-primary;
+      font-size: 1.5rem;
+      margin-right: 1rem;
+    }
+  }
+}
+
+// Service Catalog Section
+.catalog-card {
+  background-color: $charioft-white;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid $charioft-border-color;
+  width: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.08);
+    border-color: $charioft-primary;
+  }
+  h5 {
+    font-weight: 600;
+    color: $charioft-primary;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+  }
+  p {
+    color: $charioft-text-muted;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+    line-height: 1.6;
+  }
+}
+
+// Engagement Models Section
+.models-section {
+  background-color: $charioft-white;
+}
+.model-card {
+  background-color: $charioft-light-gray;
+  border: 1px solid $charioft-border-color;
+  border-top: 4px solid $charioft-primary;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  height: 100%;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: lighten($charioft-primary, 38%);
+  }
+  h5 {
+    font-weight: 600;
+    color: $charioft-dark;
+    margin-bottom: 0.5rem;
+  }
+  p {
+    color: $charioft-text-muted;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+  }
+}
+
+// Sticky Form Wrapper & Styling
+.sticky-form-wrapper {
+  position: sticky;
+  top: 120px;
+}
+.form-wrapper {
+  background-color: $charioft-white;
+  padding: 2.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid $charioft-border-color;
+  box-shadow: 0 0.5rem 2rem rgba(0,0,0,0.07);
+  
+  .form-control {
+    background-color: $charioft-light-gray;
+    border-color: $charioft-border-color;
+    padding: 0.85rem 1rem;
+    &:focus {
+      background-color: $charioft-white;
+      border-color: $charioft-primary;
+      box-shadow: 0 0 0 0.25rem rgba($charioft-primary, 0.25);
+    }
+  }
+  .btn-primary {
+    padding: 0.85rem 1rem;
+    font-weight: 500;
+  }
+}
+
+// Final CTA Section
+.cta-section {
+  background-color: $charioft-primary;
+  .btn-light {
+    font-weight: 500;
+    padding: 0.8rem 2.5rem;
+    color: $charioft-primary;
+    &:hover {
+      background-color: #eef5ff;
+    }
+  }
+}

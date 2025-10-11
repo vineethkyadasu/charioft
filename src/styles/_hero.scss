@@ -1,0 +1,50 @@
+@mixin create-hero-section($bg-image-url, $bg-properties: 'top center / cover no-repeat') {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  // This is your background image
+  background: url($bg-image-url) #{$bg-properties};
+  overflow: hidden; // Crucial for containing the transformed pseudo-element
+
+  // 1. This adds the dark overlay directly on top of your background image.
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(30, 32, 35, 0.6); // A dark, mostly opaque tint
+    z-index: 1;
+  }
+
+  // 2. This creates the sweeping, curved gradient shape.
+  // It's a large, rotated pseudo-element that creates the parabolic effect.
+  &::after {
+    content: '';
+    position: absolute;
+    width: 150%;
+    height: 100%;
+    top: -25%;
+    left: -25%;
+    background: linear-gradient(110deg, rgb(13 14 15), transparent 80%);
+    transform: rotate(-15deg);
+    z-index: 2;
+  }
+
+  .hero-content {
+    // This places your text on top of all background layers.
+    position: relative;
+    z-index: 3;
+    text-align: left;
+
+    h1 {
+      font-weight: 700;
+    }
+
+    p.lead {
+      color: rgba(255, 255, 255, 0.9);
+    }
+  }
+}

@@ -1,1 +1,45 @@
-/* You can add global styles to this file, and also import other style files */
+// Import Bootstrap's functions, variables, and mixins
+@import "bootstrap/scss/bootstrap";
+
+// Import Bootstrap Icons
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+@font-face {
+  font-family: 'Felix Titling';
+ src: url('/assets/fonts/FelixTitlingMT.woff2') format('woff2'),
+       url('/assets/fonts/FelixTitlingMT.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+// 1. Define the animation's steps
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// 2. Define the classes that will use the animation
+.animated-row {
+  opacity: 0; // Start invisible
+
+  // When the directive adds 'is-visible', apply the animation
+  &.is-visible {
+    animation: fadeInUp 1.5s ease-out forwards;
+  }
+}
+
+// This block makes the toast background solid white
+.toast {
+  // This overrides Bootstrap's default rgba() color and makes it solid white
+  background-color: #ffffff;
+  
+  // This removes any potential blur effect that might cause transparency
+  backdrop-filter: none;
+}
