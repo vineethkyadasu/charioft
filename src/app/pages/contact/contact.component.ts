@@ -16,7 +16,7 @@ export class ContactComponent implements OnInit {
   serviceOptions = [
     { name: 'Exadata Services Inquiry', selected: false },
     { name: 'Database Services Inquiry', selected: false },
-    { name: 'HA and Cloud Backup Inquiry', selected: false },
+    { name: 'High Availability Inquiry', selected: false },
     { name: 'Managed Services Inquiry', selected: false },
     { name: 'Automation Services Inquiry', selected: false },
     { name: 'Other', selected: false }

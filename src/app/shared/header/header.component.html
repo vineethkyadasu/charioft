@@ -14,19 +14,20 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" (click)="closeNavbar()">Home</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/database" routerLinkActive="active-link" (click)="closeNavbar()">Database</a>
+        </li>
          <li class="nav-item">
           <a class="nav-link" routerLink="/exadata" routerLinkActive="active-link" (click)="closeNavbar()">Exadata</a>
         </li>
-         <li class="nav-item">
-          <a class="nav-link" routerLink="/database" routerLinkActive="active-link" (click)="closeNavbar()">Database</a>
-        </li>
+         
         
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" [class.active-link]="isServicesActive">
             Services
           </a>
           <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
-            <li><a class="dropdown-item" routerLink="/services/hacloud" routerLinkActive="active" (click)="closeNavbar()">HA and Cloud Backup</a></li>
+            <li><a class="dropdown-item" routerLink="/services/hacloud" routerLinkActive="active" (click)="closeNavbar()">High Availability</a></li>
             <li><a class="dropdown-item" routerLink="/services/managed" routerLinkActive="active" (click)="closeNavbar()">Managed Services</a></li>
             <li><a class="dropdown-item" routerLink="/services/automation" routerLinkActive="active" (click)="closeNavbar()">Automation Services</a></li>
           </ul>

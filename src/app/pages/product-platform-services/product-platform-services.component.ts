@@ -16,8 +16,8 @@ export class ProductPlatformServicesComponent implements OnInit {
 
   ngOnInit(): void {
     this.seoService.updateTags(
-      'HA and Cloud Backup Services | OCI Security | Charioft',
-      'Ensure business continuity with Charioft\'s expert HA and Cloud Backup services. We specialize in Oracle Cloud Infrastructure (OCI) security, offering threat management, 24/7 monitoring, and secure design to protect your databases, apps, and networks.'
+      'High Availability Services | OCI Security | Charioft',
+      'Ensure business continuity with Charioft\'s expert High Availability services. We specialize in Oracle Cloud Infrastructure (OCI) security, offering threat management, 24/7 monitoring, and secure design to protect your databases, apps, and networks.'
     );
   }
   
@@ -29,7 +29,7 @@ export class ProductPlatformServicesComponent implements OnInit {
 
     const formData = {
       ...form.value,
-      services: 'HA and Cloud Backup Services Inquiry'
+      services: 'High Availability Services Inquiry'
     };
 
     try {
