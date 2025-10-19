@@ -16,8 +16,8 @@ export class ProductPlatformServicesComponent implements OnInit {
 
   ngOnInit(): void {
     this.seoService.updateTags(
-      'High Availability Services | OCI Security | Charioft',
-      'Ensure business continuity with Charioft\'s expert High Availability services. We specialize in Oracle Cloud Infrastructure (OCI) security, offering threat management, 24/7 monitoring, and secure design to protect your databases, apps, and networks.'
+      'High Availability Solutions Services | OCI Security | Charioft',
+      'Ensure business continuity with Charioft\'s expert High Availability Solutions services. We specialize in Oracle Cloud Infrastructure (OCI) security, offering threat management, 24/7 monitoring, and secure design to protect your databases, apps, and networks.'
     );
   }
   
@@ -29,7 +29,7 @@ export class ProductPlatformServicesComponent implements OnInit {
 
     const formData = {
       ...form.value,
-      services: 'High Availability Services Inquiry'
+      services: 'High Availability Solutions Services Inquiry'
     };
 
     try {
