@@ -3,7 +3,6 @@ import { isPlatformBrowser } from '@angular/common';
 import { NgForm } from '@angular/forms';
 import { ContactService } from '../../shared/contact.service';
 import { SeoService } from 'src/app/shared/seo.service';
-import * as bootstrap from 'bootstrap';
 
 @Component({
   selector: 'app-contact',
@@ -56,11 +55,7 @@ export class ContactComponent implements OnInit {
       await this.contactService.submitForm(formData);
       
       if (isPlatformBrowser(this.platformId)) {
-        const successToastEl = document.getElementById('successToast');
-        if (successToastEl) {
-          const successToast = new bootstrap.Toast(successToastEl);
-          successToast.show();
-        }
+      alert('Your message has been sent successfully!');
       }
       
       form.resetForm();
@@ -70,11 +65,7 @@ export class ContactComponent implements OnInit {
       console.error('Error sending form:', err);
 
       if (isPlatformBrowser(this.platformId)) {
-        const errorToastEl = document.getElementById('errorToast');
-        if (errorToastEl) {
-          const errorToast = new bootstrap.Toast(errorToastEl);
-          errorToast.show();
-        }
+      alert('Something went wrong. Please try again.');
       }
 
     } finally {
@@ -99,8 +90,12 @@ export class ContactComponent implements OnInit {
 
   @HostListener('document:click', ['$event'])
   handleClickOutside(event: Event): void {
-    if (!this.el.nativeElement.contains(event.target)) {
-      this.isDropdownOpen = false;
+    // ** THIS IS THE FIX **
+    // Only run this logic if we are in a browser environment.
+    if (isPlatformBrowser(this.platformId)) {
+      if (!this.el.nativeElement.contains(event.target)) {
+        this.isDropdownOpen = false;
+      }
     }
   }
 }

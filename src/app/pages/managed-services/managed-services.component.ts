@@ -1,7 +1,6 @@
 import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common'; // 1. IMPORT isPlatformBrowser
 import { NgForm } from '@angular/forms';
-import * as bootstrap from 'bootstrap';
 import { ContactService } from 'src/app/shared/contact.service';
 import { SeoService } from 'src/app/shared/seo.service';
 
@@ -42,11 +41,7 @@ export class ManagedServicesComponent implements OnInit {
       
       // 3. WRAP browser-specific code in this check
       if (isPlatformBrowser(this.platformId)) {
-        const successToastEl = document.getElementById('successToast');
-        if (successToastEl) {
-          const successToast = new bootstrap.Toast(successToastEl);
-          successToast.show();
-        }
+       alert('Your message has been sent successfully!');
       }
       
       form.resetForm();
@@ -55,11 +50,7 @@ export class ManagedServicesComponent implements OnInit {
       
       // 3. ALSO WRAP the error toast logic
       if (isPlatformBrowser(this.platformId)) {
-        const errorToastEl = document.getElementById('errorToast');
-        if (errorToastEl) {
-          const errorToast = new bootstrap.Toast(errorToastEl);
-          errorToast.show();
-        }
+        alert('Something went wrong. Please try again.');
       }
       
     } finally {

@@ -1,4 +1,6 @@
-import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+// src/app/app.component.ts
+
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
 @Component({
@@ -15,14 +17,8 @@ export class AppComponent implements OnInit {
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
   ngOnInit(): void {
-    // This is the crucial check. The code inside this block will ONLY run
-    // when the application is in a browser environment.
     if (isPlatformBrowser(this.platformId)) {
-      
-      // 1. Dynamically import Bootstrap's JavaScript
-      import('bootstrap');
 
-      // 2. Safely run your WhatsApp link logic
       const encodedMsg = encodeURIComponent(this.defaultMessage);
       const isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(
         navigator.userAgent
