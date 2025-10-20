@@ -6,7 +6,11 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "dev:ssr": "ng run charioft:serve-ssr",
+    "serve:ssr": "node dist/charioft/server/main.js",
+    "build:ssr": "ng build && ng run charioft:server",
+    "prerender": "ng run charioft:prerender"
   },
   "private": true,
   "dependencies": {
@@ -17,10 +21,13 @@
     "@angular/forms": "^15.2.0",
     "@angular/platform-browser": "^15.2.0",
     "@angular/platform-browser-dynamic": "^15.2.0",
+    "@angular/platform-server": "^15.2.0",
     "@angular/router": "^15.2.0",
+    "@nguniversal/express-engine": "^15.2.1",
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.8",
     "bootstrap-icons": "^1.13.1",
+    "express": "^4.15.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
@@ -29,8 +36,11 @@
     "@angular-devkit/build-angular": "^15.2.11",
     "@angular/cli": "~15.2.11",
     "@angular/compiler-cli": "^15.2.0",
+    "@nguniversal/builders": "^15.2.1",
     "@types/bootstrap": "^5.2.10",
+    "@types/express": "^4.17.0",
     "@types/jasmine": "~4.3.0",
+    "@types/node": "^14.15.0",
     "jasmine-core": "~4.5.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.1.0",

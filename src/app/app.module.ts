@@ -33,7 +33,7 @@ import { ScrollAnimationDirective } from './shared/scroll-animation.directive';
     ScrollAnimationDirective
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     FormsModule
   ],

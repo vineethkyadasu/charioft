@@ -1,4 +1,5 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common'; // 1. IMPORT isPlatformBrowser
 import { NgForm } from '@angular/forms';
 import * as bootstrap from 'bootstrap';
 import { ContactService } from 'src/app/shared/contact.service';
@@ -10,14 +11,18 @@ import { SeoService } from 'src/app/shared/seo.service';
   styleUrls: ['./automation-services.component.scss']
 })
 export class AutomationServicesComponent implements OnInit {
-disableSend = false;
+  disableSend = false;
 
-  constructor(private contactService: ContactService,private seoService: SeoService,) {}
+  constructor(
+    private contactService: ContactService,
+    private seoService: SeoService,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {}
 
-ngOnInit(): void {
+  ngOnInit(): void {
     this.seoService.updateTags(
-      'Automation Services | Business Process Improvement (BPI) | Charioft',
-      'Enhance business efficiency and reduce costs with Charioft\'s expert Automation Services. We specialize in Business Process Improvement (BPI) to streamline workflows, boost productivity, and increase your ROI. Schedule your assessment today.'
+      'Automation & Business Process Improvement (BPI) | Charioft',
+      'Streamline operations and increase ROI with Charioft\'s expert Business Process Improvement (BPI) and Automation (BPA) services. We help you reduce costs, boost agility, and align technology with your business goals.'
     );
   }
 
@@ -35,22 +40,26 @@ ngOnInit(): void {
     try {
       await this.contactService.submitForm(formData);
       
-      // **THE FIX:** Check if the element exists before using it.
-      const successToastEl = document.getElementById('successToast');
-      if (successToastEl) {
-        const successToast = new bootstrap.Toast(successToastEl);
-        successToast.show();
+      // 2. WRAP browser-specific code in this check
+      if (isPlatformBrowser(this.platformId)) {
+        const successToastEl = document.getElementById('successToast');
+        if (successToastEl) {
+          const successToast = new bootstrap.Toast(successToastEl);
+          successToast.show();
+        }
       }
       
       form.resetForm();
     } catch (err) {
       console.error('Error sending form:', err);
       
-      // **THE FIX:** Also check for the error toast element.
-      const errorToastEl = document.getElementById('errorToast');
-      if (errorToastEl) {
-        const errorToast = new bootstrap.Toast(errorToastEl);
-        errorToast.show();
+      // 2. ALSO WRAP the error toast logic
+      if (isPlatformBrowser(this.platformId)) {
+        const errorToastEl = document.getElementById('errorToast');
+        if (errorToastEl) {
+          const errorToast = new bootstrap.Toast(errorToastEl);
+          errorToast.show();
+        }
       }
       
     } finally {

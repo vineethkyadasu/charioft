@@ -1,4 +1,5 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common'; // 1. IMPORT isPlatformBrowser
 import { NgForm } from '@angular/forms';
 import { ContactService } from 'src/app/shared/contact.service';
 import * as bootstrap from 'bootstrap';
@@ -10,14 +11,18 @@ import { SeoService } from 'src/app/shared/seo.service';
   styleUrls: ['./data-services.component.scss']
 })
 export class DataServicesComponent implements OnInit {
- disableSend = false;
+  disableSend = false;
 
-  constructor(private contactService: ContactService, private seoService: SeoService) {}
+  constructor(
+    private contactService: ContactService,
+    private seoService: SeoService,
+    @Inject(PLATFORM_ID) private platformId: Object // 2. INJECT PLATFORM_ID
+  ) {}
 
   ngOnInit(): void {
     this.seoService.updateTags(
       'Database Administration (DBA) Services | Charioft',
-      'Ensure the performance, reliability, and security of your data with Charioft\'s expert Database Administration (DBA) Services. We offer 24/7 monitoring, performance tuning, and strategic support. Get a consultation today.'
+      'Ensure the performance, reliability, and security of your data with Charioft\'s expert Database Administration (DBA) Services. We offer tiered support, top-quality experts, and 24/7 monitoring to maximize your data\'s value. Get a consultation today.'
     );
   }
 
@@ -35,22 +40,26 @@ export class DataServicesComponent implements OnInit {
     try {
       await this.contactService.submitForm(formData);
       
-      // **THE FIX:** Check if the element exists before using it.
-      const successToastEl = document.getElementById('successToast');
-      if (successToastEl) {
-        const successToast = new bootstrap.Toast(successToastEl);
-        successToast.show();
+      // 3. WRAP browser-specific code in this check
+      if (isPlatformBrowser(this.platformId)) {
+        const successToastEl = document.getElementById('successToast');
+        if (successToastEl) {
+          const successToast = new bootstrap.Toast(successToastEl);
+          successToast.show();
+        }
       }
       
       form.resetForm();
     } catch (err) {
       console.error('Error sending form:', err);
       
-      // **THE FIX:** Also check for the error toast element.
-      const errorToastEl = document.getElementById('errorToast');
-      if (errorToastEl) {
-        const errorToast = new bootstrap.Toast(errorToastEl);
-        errorToast.show();
+      // 3. ALSO WRAP the error toast logic
+      if (isPlatformBrowser(this.platformId)) {
+        const errorToastEl = document.getElementById('errorToast');
+        if (errorToastEl) {
+          const errorToast = new bootstrap.Toast(errorToastEl);
+          errorToast.show();
+        }
       }
       
     } finally {

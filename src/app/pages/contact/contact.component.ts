@@ -1,9 +1,9 @@
-// src/app/contact-us/contact-us.component.ts
-import { Component, HostListener, ElementRef, OnInit } from '@angular/core';
+import { Component, HostListener, ElementRef, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { NgForm } from '@angular/forms';
-import { ContactService } from '../../shared/contact.service'; // Adjust path if needed
-import * as bootstrap from 'bootstrap';
+import { ContactService } from '../../shared/contact.service';
 import { SeoService } from 'src/app/shared/seo.service';
+import * as bootstrap from 'bootstrap';
 
 @Component({
   selector: 'app-contact',
@@ -25,10 +25,11 @@ export class ContactComponent implements OnInit {
   constructor(
     private el: ElementRef,
     private contactService: ContactService,
-    private seoService: SeoService
+    private seoService: SeoService,
+    @Inject(PLATFORM_ID) private platformId: Object
   ) {}
 
-   ngOnInit(): void {
+  ngOnInit(): void {
     this.seoService.updateTags(
       'Contact Us | Charioft - Let\'s Build Something Great',
       'Get in touch with the Charioft team. Whether you have a project idea, a question about our technology services, or a partnership inquiry, we are ready to help. Contact us today!'
@@ -51,16 +52,15 @@ export class ContactComponent implements OnInit {
       services: selectedServices
     };
 
-    console.log(formData)
-
     try {
       await this.contactService.submitForm(formData);
       
-      // **FIX 1: Add null check before creating toast**
-      const successToastEl = document.getElementById('successToast');
-      if (successToastEl) {
-        const successToast = new bootstrap.Toast(successToastEl);
-        successToast.show();
+      if (isPlatformBrowser(this.platformId)) {
+        const successToastEl = document.getElementById('successToast');
+        if (successToastEl) {
+          const successToast = new bootstrap.Toast(successToastEl);
+          successToast.show();
+        }
       }
       
       form.resetForm();
@@ -69,11 +69,12 @@ export class ContactComponent implements OnInit {
     } catch (err) {
       console.error('Error sending form:', err);
 
-      // **FIX 1: Add null check before creating toast**
-      const errorToastEl = document.getElementById('errorToast');
-      if (errorToastEl) {
-        const errorToast = new bootstrap.Toast(errorToastEl);
-        errorToast.show();
+      if (isPlatformBrowser(this.platformId)) {
+        const errorToastEl = document.getElementById('errorToast');
+        if (errorToastEl) {
+          const errorToast = new bootstrap.Toast(errorToastEl);
+          errorToast.show();
+        }
       }
 
     } finally {
@@ -81,7 +82,6 @@ export class ContactComponent implements OnInit {
     }
   }
 
-  // **FIX 2: Implemented the missing logic for the custom multiselect**
   toggleDropdown(): void {
     this.isDropdownOpen = !this.isDropdownOpen;
   }

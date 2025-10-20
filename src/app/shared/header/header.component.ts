@@ -1,4 +1,5 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component, ViewChild, ElementRef, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,7 +12,10 @@ export class HeaderComponent {
   @ViewChild('navbarNavDropdown') navbarNavDropdown!: ElementRef;
   @ViewChild('navbarToggler') navbarToggler!: ElementRef;
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    @Inject(PLATFORM_ID) private platformId: Object // Inject PLATFORM_ID
+  ) { }
 
   /**
    * Checks if the current URL path starts with '/services'.
@@ -26,10 +30,13 @@ export class HeaderComponent {
    * This is called when any navigation link is clicked.
    */
   closeNavbar(): void {
-    // Check if the navbar is expanded (by checking for the 'show' class)
-    if (this.navbarNavDropdown.nativeElement.classList.contains('show')) {
-      // Programmatically click the toggle button to collapse the menu
-      this.navbarToggler.nativeElement.click();
+    // Only run this code if the app is in the browser
+    if (isPlatformBrowser(this.platformId)) {
+      // Check if the navbar is expanded (by checking for the 'show' class)
+      if (this.navbarNavDropdown.nativeElement.classList.contains('show')) {
+        // Programmatically click the toggle button to collapse the menu
+        this.navbarToggler.nativeElement.click();
+      }
     }
   }
 }
