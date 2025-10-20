@@ -2,21 +2,22 @@
   "version": 2,
   "builds": [
     {
-      "src": "package.json",
-      "use": "@vercel/angular",
-      "config": {
-        "distDir": "dist/charioft"
-      }
+      "src": "dist/charioft/server/main.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "dist/charioft/browser/**",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
-      "src": "/(.*\\..*)",
-      "dest": "/$1"
+      "src": "/(.*?)\\.(js|css|ico|svg|png|jpg|jpeg|gif|woff|woff2|ttf)",
+      "dest": "/dist/charioft/browser/$1.$2"
     },
     {
       "src": "/(.*)",
-      "dest": "/index.html"
+      "dest": "/dist/charioft/server/main.js"
     }
   ]
 }
