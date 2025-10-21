@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class ContactService {
   // The Google Apps Script URL is now managed in one place.
-  private readonly WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbzrkPXbqZ9-p7Yr3igdClGyDsRlVznPtD29OTFG4_LPuCkM8QGnki_Pjk26mpE8pV9htg/exec';
+  private readonly WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbxYm4n2A4tWSY8joKYc40mabf8FyxAD3YaNy-UGJf6O-CKA5eqhBQIjTiWygrdJ4Mk/exec';
 
   constructor() { }
 
