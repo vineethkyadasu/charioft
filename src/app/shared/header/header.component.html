@@ -1,7 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light custom-navbar sticky-top">
   <div class="container-fluid container-xl">
     <a class="navbar-brand d-flex align-items-center" routerLink="/" (click)="closeNavbar()">
-      <!-- <img src="/assets/images/logo.jpeg" alt="Charioft Logo" class="charioft-logo"> -->
       <span class="brand-text">Charioft</span>
     </a>
     
@@ -23,7 +22,7 @@
          
         
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" [class.active-link]="isServicesActive">
+          <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" [class.active-link]="isServicesActive" (click)="$event.preventDefault()">
             Services
           </a>
           <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
