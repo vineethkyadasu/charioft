@@ -44,9 +44,11 @@
       <div class="col-12">
         <div class="copyright-section">
           <span class="copyright-text">© {{year}} Charioft. All Rights Reserved.</span>
-          <span class="separator">|</span>
-          <a href="https://www.vikrin.com/" class="designer-link" target="_blank" rel="noopener noreferrer">Designed by Vikrin</a>
-        </div>
+          <ng-container *ngIf="showDesignerLink">
+            <span class="separator">|</span>
+            <a href="https://www.vikrin.com/" class="designer-link" target="_blank" rel="noopener noreferrer">Designed by Vikrin</a>
+          </ng-container>
+         </div>
       </div>
     </div>
   </div>
