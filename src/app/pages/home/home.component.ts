@@ -11,7 +11,7 @@ constructor(private seoService: SeoService) { }
 
   ngOnInit(): void {
    this.seoService.updateTags(
-      'Charioft: Technology Service Platform for Business Resilience',
+      'Charioft | Technology Service Platform for Business Resilience',
       'Achieve operational excellence with Charioft, a leading technology service platform. We deliver resilience, reliability, and uninterrupted performance through expert database, engineered systems, and infrastructure services.'
     );
   }
