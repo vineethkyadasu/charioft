@@ -23,6 +23,22 @@ export class ProductPlatformServicesComponent implements OnInit {
       'High Availability Services | Oracle RAC & Disaster Recovery | Charioft',
       'Ensure maximum uptime with Charioft\'s High Availability services. We specialize in Oracle RAC solutions, including performance tuning and 24/7 monitoring, and provide comprehensive disaster recovery to protect your critical data. Ensure your systems are resilient.'
     );
+    this.seoService.setCanonicalURL('https://charioft.com/services/hacloud');
+    this.seoService.addSchema({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://charioft.com/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "High Availability Services",
+        "item": "https://charioft.com/services/hacloud"
+      }]
+    });
   }
   
   async onSubmit(form: NgForm) {

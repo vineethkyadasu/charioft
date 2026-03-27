@@ -23,6 +23,22 @@ export class CloudServicesComponent implements OnInit {
       'Oracle Exadata Support & Services | Charioft',
       'Maximize Oracle Exadata performance with Charioft\'s expert database support. We provide 24/7 monitoring, performance tuning, and migration for cloud, on-prem, and hybrid solutions. Contact our experts today.'
     );
+    this.seoService.setCanonicalURL('https://charioft.com/exadata');
+    this.seoService.addSchema({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://charioft.com/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Exadata Services",
+        "item": "https://charioft.com/exadata"
+      }]
+    });
   }
 
   async onSubmit(form: NgForm) {

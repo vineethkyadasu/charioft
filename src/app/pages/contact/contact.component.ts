@@ -33,6 +33,22 @@ export class ContactComponent implements OnInit {
       'Contact Us | Charioft - Let\'s Build Something Great',
       'Get in touch with the Charioft team. Whether you have a project idea, a question about our technology services, or a partnership inquiry, we are ready to help. Contact us today!'
     );
+    this.seoService.setCanonicalURL('https://charioft.com/contact');
+    this.seoService.addSchema({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://charioft.com/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Contact Us",
+        "item": "https://charioft.com/contact"
+      }]
+    });
   }
 
   async onSubmit(form: NgForm) {

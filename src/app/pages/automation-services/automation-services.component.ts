@@ -23,6 +23,22 @@ export class AutomationServicesComponent implements OnInit {
       'Automation & Business Process Improvement (BPI) | Charioft',
       'Streamline operations and increase ROI with Charioft\'s expert Business Process Improvement (BPI) and Automation (BPA) services. We help you reduce costs, boost agility, and align technology with your business goals.'
     );
+    this.seoService.setCanonicalURL('https://charioft.com/services/automation');
+    this.seoService.addSchema({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://charioft.com/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Automation Services",
+        "item": "https://charioft.com/services/automation"
+      }]
+    });
   }
 
   async onSubmit(form: NgForm) {

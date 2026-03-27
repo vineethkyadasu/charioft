@@ -23,6 +23,22 @@ export class ManagedServicesComponent implements OnInit {
       'Proactive Managed Services | 24/7 IT Support | Charioft',
       'Focus on your core business with Charioft\'s proactive managed services. We ensure peak performance, security, and reliability for your IT infrastructure with 24/7 monitoring and expert support.'
     );
+    this.seoService.setCanonicalURL('https://charioft.com/services/managed');
+    this.seoService.addSchema({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://charioft.com/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Managed Services",
+        "item": "https://charioft.com/services/managed"
+      }]
+    });
   }
 
   async onSubmit(form: NgForm) {

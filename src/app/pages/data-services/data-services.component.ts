@@ -23,6 +23,22 @@ export class DataServicesComponent implements OnInit {
       'Database Administration (DBA) Services | Charioft',
       'Ensure the performance, reliability, and security of your data with Charioft\'s expert Database Administration (DBA) Services. We offer tiered support, top-quality experts, and 24/7 monitoring to maximize your data\'s value. Get a consultation today.'
     );
+    this.seoService.setCanonicalURL('https://charioft.com/database');
+    this.seoService.addSchema({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://charioft.com/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Database Services",
+        "item": "https://charioft.com/database"
+      }]
+    });
   }
 
   async onSubmit(form: NgForm) {

@@ -11,10 +11,26 @@ export class AboutComponent implements OnInit{
 constructor(private seoService: SeoService) { }
 
   ngOnInit(): void {
-  this.seoService.updateTags(
+    this.seoService.updateTags(
       'About Charioft | Database & Engineered System Experts',
       'Learn about Charioft, a team of expert database and Engineered System technology specialists. We provide services and support to help you manage, collect, and derive value from your organizational data through our reliable, software-driven platform.'
     );
+    this.seoService.setCanonicalURL('https://charioft.com/about');
+    this.seoService.addSchema({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://charioft.com/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "About Us",
+        "item": "https://charioft.com/about"
+      }]
+    });
   }
 
 }
