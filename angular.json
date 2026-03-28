@@ -141,7 +141,14 @@
           "builder": "@nguniversal/builders:prerender",
           "options": {
             "routes": [
-              "/"
+              "/",
+              "/about",
+              "/exadata",
+              "/database",
+              "/services/automation",
+              "/services/managed",
+              "/services/hacloud",
+              "/contact"
             ]
           },
           "configurations": {

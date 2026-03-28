@@ -20,8 +20,8 @@ export class ProductPlatformServicesComponent implements OnInit {
 
   ngOnInit(): void {
     this.seoService.updateTags(
-      'High Availability Services | Oracle RAC & Disaster Recovery | Charioft',
-      'Ensure maximum uptime with Charioft\'s High Availability services. We specialize in Oracle RAC solutions, including performance tuning and 24/7 monitoring, and provide comprehensive disaster recovery to protect your critical data. Ensure your systems are resilient.'
+      'Charioft | High Availability & Disaster Recovery Solutions',
+      'Ensure 24/7 uptime with Charioft. We specialize in Oracle RAC, performance tuning, and comprehensive disaster recovery to protect your critical enterprise data.'
     );
     this.seoService.setCanonicalURL('https://charioft.com/services/hacloud');
     this.seoService.addSchema({

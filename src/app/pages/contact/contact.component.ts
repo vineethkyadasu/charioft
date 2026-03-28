@@ -30,8 +30,8 @@ export class ContactComponent implements OnInit {
 
   ngOnInit(): void {
     this.seoService.updateTags(
-      'Contact Us | Charioft - Let\'s Build Something Great',
-      'Get in touch with the Charioft team. Whether you have a project idea, a question about our technology services, or a partnership inquiry, we are ready to help. Contact us today!'
+      'Charioft | Contact Us - Let\'s Build Something Great',
+      'Get in touch with Charioft. Whether you have a project idea, a question about our technology services, or a partnership inquiry, we are ready to help. Reach out today!'
     );
     this.seoService.setCanonicalURL('https://charioft.com/contact');
     this.seoService.addSchema({

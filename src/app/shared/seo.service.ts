@@ -77,15 +77,54 @@ export class SeoService {
    * Specifically adds brand-linkage schema to help overcome autocorrect.
    */
   addBrandSchema(): void {
+    // Brand Schema
     this.addSchema({
       "@context": "https://schema.org",
       "@type": "Brand",
       "name": "Charioft",
+      "alternateName": "Charioft Technology",
       "url": "https://charioft.com",
-      "description": "Charioft is a premier technology services and automation platform.",
+      "logo": "https://charioft.com/favicon.ico",
+      "description": "Charioft is a premier technology services and automation platform specializing in cloud transformation, data engineering, and managed IT solutions.",
       "sameAs": [
         "https://www.linkedin.com/company/charioft"
       ]
+    });
+
+    // WebSite Schema
+    this.addSchema({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Charioft",
+      "alternateName": ["Charioft Technology", "Charioft LLC"],
+      "url": "https://charioft.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://charioft.com/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    });
+
+    // Organization Schema
+    this.addSchema({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Charioft",
+      "url": "https://charioft.com",
+      "logo": "https://charioft.com/favicon.ico",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "455 Market St Ste 1940 PMB 156932",
+        "addressLocality": "San Francisco",
+        "addressRegion": "CA",
+        "postalCode": "94105",
+        "addressCountry": "US"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-929-445-0466",
+        "contactType": "customer service"
+      }
     });
   }
 }

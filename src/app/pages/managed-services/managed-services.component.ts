@@ -20,8 +20,8 @@ export class ManagedServicesComponent implements OnInit {
 
   ngOnInit(): void {
     this.seoService.updateTags(
-      'Proactive Managed Services | 24/7 IT Support | Charioft',
-      'Focus on your core business with Charioft\'s proactive managed services. We ensure peak performance, security, and reliability for your IT infrastructure with 24/7 monitoring and expert support.'
+      'Charioft | Proactive Managed IT Services & 24/7 Support',
+      'Optimize your IT infrastructure with Charioft\'s managed services. We provide 24/7 monitoring, security, and expert support to ensure peak performance for your enterprise.'
     );
     this.seoService.setCanonicalURL('https://charioft.com/services/managed');
     this.seoService.addSchema({

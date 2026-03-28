@@ -20,8 +20,8 @@ export class DataServicesComponent implements OnInit {
 
   ngOnInit(): void {
     this.seoService.updateTags(
-      'Database Administration (DBA) Services | Charioft',
-      'Ensure the performance, reliability, and security of your data with Charioft\'s expert Database Administration (DBA) Services. We offer tiered support, top-quality experts, and 24/7 monitoring to maximize your data\'s value. Get a consultation today.'
+      'Charioft | Expert Database Administration (DBA) Services',
+      'Ensure data reliability and security with Charioft. We offer 24/7 database monitoring, expert DBA support, and performance optimization for your enterprise systems.'
     );
     this.seoService.setCanonicalURL('https://charioft.com/database');
     this.seoService.addSchema({

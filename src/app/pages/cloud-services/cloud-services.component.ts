@@ -20,8 +20,8 @@ export class CloudServicesComponent implements OnInit {
 
   ngOnInit(): void {
     this.seoService.updateTags(
-      'Oracle Exadata Support & Services | Charioft',
-      'Maximize Oracle Exadata performance with Charioft\'s expert database support. We provide 24/7 monitoring, performance tuning, and migration for cloud, on-prem, and hybrid solutions. Contact our experts today.'
+      'Charioft | Oracle Exadata Support & Managed Services',
+      'Optimize your Oracle Exadata environment with Charioft. We provide expert monitoring, tuning, and migration services for cloud and on-prem solutions.'
     );
     this.seoService.setCanonicalURL('https://charioft.com/exadata');
     this.seoService.addSchema({

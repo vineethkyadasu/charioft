@@ -20,8 +20,8 @@ export class AutomationServicesComponent implements OnInit {
 
   ngOnInit(): void {
     this.seoService.updateTags(
-      'Automation & Business Process Improvement (BPI) | Charioft',
-      'Streamline operations and increase ROI with Charioft\'s expert Business Process Improvement (BPI) and Automation (BPA) services. We help you reduce costs, boost agility, and align technology with your business goals.'
+      'Charioft | Automation & Business Process Improvement (BPI)',
+      'Drive efficiency with Charioft. We specialize in Business Process Improvement (BPI) and Automation (BPA) to reduce costs and align technology with your ROI goals.'
     );
     this.seoService.setCanonicalURL('https://charioft.com/services/automation');
     this.seoService.addSchema({
