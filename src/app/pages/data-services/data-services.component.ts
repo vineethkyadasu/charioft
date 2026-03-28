@@ -39,6 +39,7 @@ export class DataServicesComponent implements OnInit {
         "item": "https://charioft.com/database"
       }]
     });
+    this.seoService.addBrandSchema();
   }
 
   async onSubmit(form: NgForm) {

@@ -17,22 +17,27 @@ export class SeoService {
 
   /**
    * Updates the core SEO meta tags.
+   * Ensures "Charioft" is the leading word for brand prominence.
    */
   updateTags(title: string, description: string, image: string = 'https://charioft.com/assets/media/home-banner.png'): void {
-    this.title.setTitle(title);
-    this.meta.updateTag({ name: 'description', content: description });
+    const brandTitle = title.includes('Charioft') ? title : `${title} | Charioft`;
+    const brandDescription = description.startsWith('Charioft') ? description : `Charioft: ${description}`;
+
+    this.title.setTitle(brandTitle);
+    this.meta.updateTag({ name: 'description', content: brandDescription });
     this.meta.updateTag({ name: 'author', content: 'Charioft' });
 
     // Open Graph
-    this.meta.updateTag({ property: 'og:title', content: title });
-    this.meta.updateTag({ property: 'og:description', content: description });
+    this.meta.updateTag({ property: 'og:title', content: brandTitle });
+    this.meta.updateTag({ property: 'og:description', content: brandDescription });
     this.meta.updateTag({ property: 'og:image', content: image });
     this.meta.updateTag({ property: 'og:type', content: 'website' });
+    this.meta.updateTag({ property: 'og:site_name', content: 'Charioft' });
 
     // Twitter
     this.meta.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
-    this.meta.updateTag({ name: 'twitter:title', content: title });
-    this.meta.updateTag({ name: 'twitter:description', content: description });
+    this.meta.updateTag({ name: 'twitter:title', content: brandTitle });
+    this.meta.updateTag({ name: 'twitter:description', content: brandDescription });
     this.meta.updateTag({ name: 'twitter:image', content: image });
   }
 
@@ -66,5 +71,21 @@ export class SeoService {
     script.type = 'application/ld+json';
     script.text = JSON.stringify(schema);
     head.appendChild(script);
+  }
+
+  /**
+   * Specifically adds brand-linkage schema to help overcome autocorrect.
+   */
+  addBrandSchema(): void {
+    this.addSchema({
+      "@context": "https://schema.org",
+      "@type": "Brand",
+      "name": "Charioft",
+      "url": "https://charioft.com",
+      "description": "Charioft is a premier technology services and automation platform.",
+      "sameAs": [
+        "https://www.linkedin.com/company/charioft"
+      ]
+    });
   }
 }

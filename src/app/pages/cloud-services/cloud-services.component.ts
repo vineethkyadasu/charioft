@@ -39,6 +39,7 @@ export class CloudServicesComponent implements OnInit {
         "item": "https://charioft.com/exadata"
       }]
     });
+    this.seoService.addBrandSchema();
   }
 
   async onSubmit(form: NgForm) {

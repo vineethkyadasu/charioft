@@ -49,6 +49,7 @@ export class ContactComponent implements OnInit {
         "item": "https://charioft.com/contact"
       }]
     });
+    this.seoService.addBrandSchema();
   }
 
   async onSubmit(form: NgForm) {

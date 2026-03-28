@@ -39,6 +39,7 @@ export class ProductPlatformServicesComponent implements OnInit {
         "item": "https://charioft.com/services/hacloud"
       }]
     });
+    this.seoService.addBrandSchema();
   }
   
   async onSubmit(form: NgForm) {

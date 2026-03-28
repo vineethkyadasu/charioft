@@ -39,6 +39,7 @@ export class ManagedServicesComponent implements OnInit {
         "item": "https://charioft.com/services/managed"
       }]
     });
+    this.seoService.addBrandSchema();
   }
 
   async onSubmit(form: NgForm) {

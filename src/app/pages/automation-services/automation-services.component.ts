@@ -39,6 +39,7 @@ export class AutomationServicesComponent implements OnInit {
         "item": "https://charioft.com/services/automation"
       }]
     });
+    this.seoService.addBrandSchema();
   }
 
   async onSubmit(form: NgForm) {

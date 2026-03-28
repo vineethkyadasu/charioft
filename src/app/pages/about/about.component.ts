@@ -31,6 +31,7 @@ constructor(private seoService: SeoService) { }
         "item": "https://charioft.com/about"
       }]
     });
+    this.seoService.addBrandSchema();
   }
 
 }
