@@ -13,18 +13,21 @@ $charioft-border: #dee2e6;
 // Custom Navbar Styling
 .custom-navbar {
   background-color: $charioft-white !important;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   border-bottom: 1px solid $charioft-border;
   transition: box-shadow 0.3s ease;
-  
-  .navbar-brand { text-decoration: none; }
-  .charioft-logo { 
-    height: 60px; 
+
+  .navbar-brand {
+    text-decoration: none;
+  }
+
+  .charioft-logo {
+    height: 45px;
     width: auto;
-    
+
     @include media-breakpoint-up(lg) {
-      height: 75px;
+      height: 60px;
     }
   }
 
@@ -48,10 +51,12 @@ $charioft-border: #dee2e6;
       transform-origin: center;
       transition: transform 0.3s ease-out;
     }
+
     &:hover::after,
     &.active-link::after {
       transform: scaleX(1);
     }
+
     &:hover,
     &.active-link {
       color: $charioft-primary;
@@ -60,9 +65,12 @@ $charioft-border: #dee2e6;
 
   .navbar-toggler {
     border: none;
-    &:focus { box-shadow: none; }
+
+    &:focus {
+      box-shadow: none;
+    }
   }
-  
+
   .custom-btn-primary {
     background-color: $charioft-primary;
     border-color: $charioft-primary;
@@ -71,6 +79,7 @@ $charioft-border: #dee2e6;
     border-radius: 0.375rem;
     font-weight: 500;
     transition: all 0.3s ease;
+
     &:hover {
       background-color: darken($charioft-primary, 10%);
       border-color: darken($charioft-primary, 10%);
@@ -82,11 +91,12 @@ $charioft-border: #dee2e6;
   // Desktop Styles
   @include media-breakpoint-up(lg) {
     .navbar-nav {
-      .nav-item.dropdown:hover > .dropdown-menu {
+      .nav-item.dropdown:hover>.dropdown-menu {
         visibility: visible;
         opacity: 1;
         transform: translateY(0);
       }
+
       .dropdown-menu {
         display: block;
         visibility: hidden;
@@ -99,15 +109,21 @@ $charioft-border: #dee2e6;
         border: none;
         padding: 0.5rem 0;
       }
+
       .dropdown-item {
         color: $charioft-dark-text;
         padding: 0.75rem 1.5rem;
         transition: all 0.2s ease;
-        &.active, &:hover {
+
+        &.active,
+        &:hover {
           background-color: $charioft-light-blue;
           color: $charioft-primary;
         }
-        &.active { font-weight: 600; }
+
+        &.active {
+          font-weight: 600;
+        }
       }
     }
   }
@@ -122,11 +138,21 @@ $charioft-border: #dee2e6;
       border-radius: $border-radius;
       box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
     }
+
     .navbar-nav {
       align-items: flex-start;
-      .nav-item { margin-bottom: 0.5rem; width: 100%; }
-      .custom-btn-primary { width: 100%; text-align: center; }
+
+      .nav-item {
+        margin-bottom: 0.5rem;
+        width: 100%;
+      }
+
+      .custom-btn-primary {
+        width: 100%;
+        text-align: center;
+      }
     }
+
     // Let Bootstrap control the display of the dropdown menu
     .dropdown-menu {
       border: none !important;
@@ -134,10 +160,12 @@ $charioft-border: #dee2e6;
       background-color: transparent !important;
       padding-left: 1rem;
       margin-top: 0.5rem !important;
-      
+
       .dropdown-item {
         padding: 0.5rem 1rem;
-        &.active, &:hover {
+
+        &.active,
+        &:hover {
           background-color: transparent;
           color: $charioft-primary;
         }
