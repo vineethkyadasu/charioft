@@ -10,8 +10,6 @@ $charioft-dark-text: #343a40;
 $charioft-border: #dee2e6;
 
 // 2. Define font stack with fallback
-$charioft-header-font: "Felix Titling", "Times New Roman", serif;
-
 // Custom Navbar Styling
 .custom-navbar {
   background-color: $charioft-white !important;
@@ -21,8 +19,7 @@ $charioft-header-font: "Felix Titling", "Times New Roman", serif;
   transition: box-shadow 0.3s ease;
   
   .navbar-brand { text-decoration: none; }
-  .charioft-logo { height: 40px; width: auto; }
-  .brand-text { font-size: 1.5rem; font-weight: 600; color: $charioft-dark-text; margin-left: 0.75rem;font-family: $charioft-header-font;}
+  .charioft-logo { height: 55px; width: auto; }
 
   .nav-link {
     color: $charioft-dark-text;
