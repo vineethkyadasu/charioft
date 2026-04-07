@@ -19,7 +19,14 @@ $charioft-border: #dee2e6;
   transition: box-shadow 0.3s ease;
   
   .navbar-brand { text-decoration: none; }
-  .charioft-logo { height: 55px; width: auto; }
+  .charioft-logo { 
+    height: 60px; 
+    width: auto;
+    
+    @include media-breakpoint-up(lg) {
+      height: 75px;
+    }
+  }
 
   .nav-link {
     color: $charioft-dark-text;
