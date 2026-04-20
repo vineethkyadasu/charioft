@@ -84,7 +84,7 @@ export class SeoService {
       "name": "Charioft",
       "alternateName": "Charioft Technology",
       "url": "https://charioft.com",
-      "logo": "https://charioft.com/favicon.ico",
+      "logo": "https://charioft.com/favicon.png",
       "description": "Charioft is a premier technology services and automation platform specializing in cloud transformation, data engineering, and managed IT solutions.",
       "sameAs": [
         "https://www.linkedin.com/company/charioft"
@@ -111,7 +111,7 @@ export class SeoService {
       "@type": "Organization",
       "name": "Charioft",
       "url": "https://charioft.com",
-      "logo": "https://charioft.com/favicon.ico",
+      "logo": "https://charioft.com/favicon.png",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "455 Market St Ste 1940 PMB 156932",
