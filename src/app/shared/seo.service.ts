@@ -114,10 +114,10 @@ export class SeoService {
       "logo": "https://charioft.com/favicon.png",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "455 Market St Ste 1940 PMB 156932",
-        "addressLocality": "San Francisco",
+        "streetAddress": "1401 21st Street, Suite R",
+        "addressLocality": "Sacramento",
         "addressRegion": "CA",
-        "postalCode": "94105",
+        "postalCode": "95811",
         "addressCountry": "US"
       },
       "contactPoint": {
